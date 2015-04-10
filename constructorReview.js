@@ -4,7 +4,7 @@ var Animal = function(species, name, legs, color, food) {
   this.name = name; 
   this.legs = legs;
   this.color = color; 
-  this.food = [];
+  this.food = food;
 }
 
 
@@ -45,8 +45,8 @@ personArr;
 
 //Now we want every instance of Animal to have a eat method. This method will choose a random item in that instances food array, then alert "(name) ' ate ' (whichever food was chosen)".
 
-  Animal.prototype.eat = function(animalArr, this.name) {
-    var random = animalArr[Math.floor(Math.random * animalArr.length )];
+  Animal.prototype.eat = function() {
+    var random = this.food[Math.floor(Math.random * animalArr.length )];
     alert(this.name + ' ate ' + random);
   }
 
