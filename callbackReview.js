@@ -1,6 +1,8 @@
 /* Declare and Define the functions here that will make the function calls below work properly */
 
-
+var first = function(arr, cb) {
+   return cb(arr[0]);
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
@@ -12,6 +14,9 @@ first(names, function(firstName){
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
+var last = function(arr, cb) {
+  return cb(arr[arr.length -1]);
+}
 
 
 
@@ -27,6 +32,16 @@ last(names, function(lastName){
 
 //have the contains function return a boolean value for if the name is in the array or not.
 
+debugger
+var contains = function(name, arr, cb) {
+  for (var i = 0; i < arr.length; i++) {
+    if (name === arr[i]){
+      return cb(true);
+    }
+  }
+   return cb(false);
+}
+
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 contains('Colt', names, function(yes){
@@ -41,9 +56,13 @@ contains('Colt', names, function(yes){
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
-
-
-
+ var newArray = [];
+var map = function(arr, cb) {
+    for (var i = 0; i < arr.length; i++) {
+        newArray.push(cb(arr[i]));
+    }
+    return newArray;
+ }
 
 var numbers = [1,2,3,4,5];
 //Produces a new array of values by mapping each value in list through a transformation function
@@ -56,6 +75,19 @@ map(numbers, function(num){
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
+var uniqArr = [];
+var myObj = {};
+var uniq = function(arr, cb) {
+  for(var i = 0; i < arr.length; i++) {
+    myObj[arr[i]] = 0;
+  }
+  for (var key in arr) {
+    uniqArr.push(i);
+  }
+   cb(uniqArr);
+}
+
+This is wrong
 
 
 
@@ -68,7 +100,12 @@ uniq(names, function(uniqArr){
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
-
+var each = function(arr, cb) {
+  for(var i = 0; i < arr.length; i++) {
+    var item = arr[i];
+    var indice = i;
+  }
+}
 
 
 
