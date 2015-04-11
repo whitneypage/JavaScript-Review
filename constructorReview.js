@@ -46,14 +46,15 @@ personArr;
 //Now we want every instance of Animal to have a eat method. This method will choose a random item in that instances food array, then alert "(name) ' ate ' (whichever food was chosen)".
 
   Animal.prototype.eat = function() {
-    var random = this.food[Math.floor(Math.random * animalArr.length )];
+    var random = this.food[Math.floor(Math.random() * this.food.length)];
     alert(this.name + ' ate ' + random);
   }
 
+  elephant.eat();
 
 //At this point, if we wanted to add something to every istance of person could we? 
 
-  //Yes or no? and why or why not?
+  We can but it will only add to the future person not any past person 
 
 
 
